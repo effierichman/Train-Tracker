@@ -35,7 +35,7 @@
 
 ## React Component Hierarchy
 
-<img src='Pics/20200124_131029.jpg>
+<img src='Pics/20200124_131029.jpg'>
 
 ## Components
 
