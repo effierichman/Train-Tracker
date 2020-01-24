@@ -50,7 +50,7 @@
 
 ## Priority Matrix
 
-Include an image of your Priority Matrix (X is time and Y is priority)
+<img src='https://git.generalassemb.ly/effierichman/Train-Tracker/blob/master/Pics/Screen%20Shot%202020-01-24%20at%202.13.24%20PM.png?raw=true'>
 
 ## Timeframes
 
