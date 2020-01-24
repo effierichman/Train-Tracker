@@ -38,14 +38,15 @@
 <img src='Pics/20200124_131029.jpg'>
 
 ## Components
+| components            | description                            | type       |
+|-----------------------|----------------------------------------|------------|
+| header                | will hold logo and nav                 | functional |
+| footer                | copyright                              | functional |
+| map                   | hold map data and render map           | functional |
+| delay list            | updated delays                         | functional |
+| train list            | every line and times                   | functional |
+| stop and station list | holds data for both stations and stops | functional |
 
-| Component | Description |Type |
-| header | will hold logo and nav | functional |
-| footer | copyright | functional |
-| map | hold map data | functional |
-| delay list | uupdated delay lists | functional |
-| train list | every line  | functional |
-| stop and station list | holds data for both station and stops | functional |
 
 
 ## Priority Matrix
@@ -53,16 +54,17 @@
 <img src='https://git.generalassemb.ly/effierichman/Train-Tracker/blob/master/Pics/Screen%20Shot%202020-01-24%20at%202.13.24%20PM.png?raw=true'>
 
 ## Timeframes
-
-| Component | Priority | Estimated Time | Time Invested | Actual Time |
-| header | M |  3hr | 0 | 0 |
-| map | H |  10hr | 4HR | 0 |
-| open data api | H |  10hr | 2HR | 0 |
-| footer | L |  2hr | 0 | 0 |
-| delay list | M |  10hr | 0 | 0 |
-| stop and station list | H |  10hr | 0 | 0 |
-| directions | M |  10hr | 0 | 0 |
-
+| component             | priority | estimated time | time invested | actual time |
+|-----------------------|----------|----------------|---------------|-------------|
+| header                | M        | 3HR            | 0             | 0           |
+| MAP                   | H        | 10HR           | 4HR           | 0           |
+| OPEN DATA AND MAPBOX  | H        | 10HR           | 2HR           | 0           |
+| FOOTER                | L        | 2HR            | 0             | 0           |
+| DELAY LIST            | M        | 10HR           | 0             | 0           |
+| STOP AND STATION LIST | H        | 10HR           | 0             | 0           |
+| DIRECTIONS            | M        | 10HR           | 0             | 0           |
+| TOTAL                 |          | 55HR           | 6             | 0           |
+|
 | Total | H | 55hrs| 6hrs | 6hrs |
 
 ## Project Schedule
@@ -71,9 +73,9 @@
 |---|---| ---|
 |Jan 24th| Project Pitch / Wireframes / Priority Matrix / Functional Components | Incomplete
 |Jan 27th| Have complete access and control of both apis | Incomplete
-|Jan 28th| Pseudocode / actual code | Incomplete
-|Jan 29th| see if i can fully finish mvp  | Incomplete
-|Jan 30th| MVP/post mvp | Incomplete
+|Jan 28th| have a functional search bar and map | Incomplete
+|Jan 29th|live updates, directions and css styling| Incomplete
+|Jan 30th| favorites, fetch location,  and finish styling| Incomplete
 |Jan 31tst| Present | Incomplete
 
 ## Additional Libraries
