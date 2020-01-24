@@ -20,7 +20,7 @@
 
 ### MVP  
 - Find and use external api for both open data and mapbox
-- Render data on page 
+- Render map and directions 
 - get live updates for train schedules, stop, time and delays
 
 
