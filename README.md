@@ -11,7 +11,7 @@
 
   "type": "FeatureCollection",
   "features": [
-    {"type":"Feature","properties":{"name":"Astor Pl","url":"http://web.mta.info/nyct/service/","line":"4-6-6 Express","objectid":"1","notes":"4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"},"geometry":{"type":"Point","coordinates":[-73.99106999861966,40.73005400028978]}},{"type":"Feature","properties":{"name":"Canal St","url":"http://web.mta.info/nyct/service/","line":"4-6-6 Express","objectid":"2","notes":"4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"},"geometry":{"type":"Point","coordinates":[-74.00019299927328,40.71880300107709]}},{"type":"Feature","properties":{"name":"50th St","url":"http://web.mta.info/nyct/service/","line":"1-2","objectid":"3","notes":"1-all times, 2-nights"},"geometry":{"type":"Point","coordinates":[-73.98384899986625,40.76172799961419]}},{"type":"Feature","properties":{"name":"Bergen St","url":"http://web.mta.info/nyct/service/","line":"2-3-4","objectid":"4","notes":"4-nights, 3-all other times, 2-all times"},"geometry":{"type":"Point","coordinates":[-73.97499915116808,40.68086213682956]}},{"type":"Feature","properties":{"name":"Pennsylvania Ave","url":"http://web.mta.info/nyct/service/","line":"3-4","objectid":"5","notes":"4-nights, 3-all other times"},"geometry":{"type":"Point","coordinates":[-73.89488591154061,40.66471445143568]}},{"type":"Feature","properties":{"name":"238th St","url":"http://web.mta.info/nyct/service/","line":"1","objectid":"6","notes":"1-all times, exit only northbound"},"geometry":{"type":"Point","coordinates":[-73.90087000018522,40.88466700064975]}},{"type":"Feature","properties":{"name":"Cathedral Pkwy (110th St)","url":"http://web.mta.info/nyct/service/","line":"A-B-C","objectid":"7","notes":"A-nights, B-weekdays and evenings, C-all times exc nights"},"geometry":{"type":"Point","coordinates":[-73.95806670661364,40.800581558114956]}},{"type":"Feature","properties":{"name":"Kingston - Throop Aves","url":"http://web.mta.info/nyct/service/","line":"A-C","objectid":"8","notes":"A-nights, C-all other times"},"geometry":{"type":"Point","coordinates":[-73.94085899871263,40.67991899941601]}},{"type":"Feature","properties":{"name":"65th St","url":"http://web.mta.info/nyct/service/",
+    {"type":"Feature","properties":{"name":"Astor Pl","url":"http://web.mta.info/nyct/service/","line":"4-6-6 Express","objectid":"1","n
 ```
 
 ## Wireframes
@@ -57,8 +57,8 @@
 | component             | priority | estimated time | time invested | actual time |
 |-----------------------|----------|----------------|---------------|-------------|
 | header                | M        | 3HR            | 0             | 0           |
-| MAP                   | H        | 10HR           | 4HR           | 0           |
-| OPEN DATA AND MAPBOX  | H        | 10HR           | 2HR           | 0           |
+| MAP                   | H        | 10HR           | 12HR           | 12hr           |
+| OPEN DATA AND MAPBOX  | H        | 10HR           | 6HR           | 0           |
 | FOOTER                | L        | 2HR            | 0             | 0           |
 | DELAY LIST            | M        | 10HR           | 0             | 0           |
 | STOP AND STATION LIST | H        | 10HR           | 0             | 0           |
