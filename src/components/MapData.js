@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ReactMapGL, {Marker, Popup} from 'react-map-gl'
 // import skatePic from './7-boy-skateboarding-cartoon-clipart.jpg'
+// import TrainStops from "./components/TrainStops";
 
 
 function MapData() {
@@ -8,14 +9,14 @@ function MapData() {
         latitude: 40.800581558114956,
         longitude: -73.95806670661364,
         zoom: 10,
-        width: '100vw',
-        height: '100vh'
+        width: '50vw',
+        height: '80vh'
     })
-    const [selectPark, setSelectPark] = useState(null)
+    const [selectStation, setSelectStation] = useState(null)
     const mark = [45.38332, -75.337298];
 
     return (
-        <div>
+        <div     >
             <ReactMapGL
                 {...viewport}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -27,16 +28,16 @@ function MapData() {
                 <Marker key='1' latitude={mark[0]} longitude={mark[1]} >
                     <button onClick={e => {
                         e.preventDefault()
-                        setSelectPark(1)
+                        setSelectStation(1)
                     }}>
                         {/*<img style={{width: '50px', height: '50px'}} src={skatePic}/>*/}
                     </button>
                 </Marker>
-                {selectPark ? (
+                {selectStation ? (
                     <Popup
                         latitude={mark[0]}
                         longitude={mark[1]}
-                        onClose={() => setSelectPark(null)}
+                        onClose={() => setSelectStation(null)}
                     >
                         <p>This is my popup</p>
                     </Popup>
