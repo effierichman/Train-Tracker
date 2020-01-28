@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'
-// import rail from './pics/rail-15.svg'
+import rail from '../pics/rail.svg'
 
 
 const Map = (props) => {
-    // const {stations } = props
-    const { markers } = props
-    console.log(markers)
+    const {stations } = props
+    // const { markers } = props
+    console.log(stations)
     const [viewport, setViewport] = useState({
         latitude: 40.800581558114956,
         longitude: -73.95806670661364,
@@ -25,13 +25,18 @@ const Map = (props) => {
                 onViewportChange={viewport => {
                     setViewport(viewport)
                 }}  >
-                {markers && markers.map(station => {
+                {stations && stations.map(station => {
                     return (
                         <Marker
                             key={station.objectid}
                             latitude={station.the_geom.coordinates[1]}
                             longitude={station.the_geom.coordinates[0]}
                         >
+                      <div> 
+
+                    <img style={{width: '15px', height: '15px'}} src={rail} alt='pin'/>
+                      </div>
+        
                             {/* <img src='src/pics/rail.svg'></img> */}
                         </Marker>
                     )
