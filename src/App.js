@@ -1,18 +1,21 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import Markers from "./components/Markers"
+import { Marker } from 'react-map-gl'
 import TrainStops from "./components/TrainStops";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SearchBar from './components/SearchBar'
 import axios from "axios";
 import Map from './components/Map';
-const TrainStationsURL = "https://data.cityofnewyork.us/resource/kk4q-3rt2.json"
+import pin from './pics/pin.png'
+
 
 function App() {
-
+    
     const [stations, setStations] = useState(null)
     const [selectStation, setSelectStation] = useState(null)
-
+    const [markers, setMarkers] = useState(null)
+    
+    const TrainStationsURL = "https://data.cityofnewyork.us/resource/kk4q-3rt2.json"
 
 
     const getTrainStations = async () => {
@@ -20,12 +23,13 @@ function App() {
             let response = await axios.get(TrainStationsURL);
             setStations(response.data);
             console.log(response.data)
+            setMarkers(response.data)
         } catch (err) {
             console.log(`Error Occurred: ${err}`);
             console.log(err.response)
         }
     };
-    useEffect(() => {getTrainStations()},[])
+    useEffect(() => { getTrainStations() },[])
 
     function handleClick(e) {
         e.preventDefault();
@@ -44,20 +48,21 @@ function App() {
         //     width: '400px'
         // }}
         >
-        {
-            (stations ? (
-                stations.map(station => {
-                    console.log(station.name)
-                    console.log(station.coordinates)
-                    // console.log(stations.path.to.longitude)
-            })
-                ) : (null))
-        }
+                     
             <Header />
             <SearchBar handleChange={handleChange} handleClick={handleClick} />
-            <Map stations={stations} />
-            {/* <Markers selectStation={selectStation} setSelectStation={setSelectStation} /> */}
-            <TrainStops setStations={setStations} />
+            {
+                (
+                    stations ?
+                        (
+                            <Map stations={stations} markers={markers}/>
+                        )
+                        :
+                        (
+                            null
+                        )
+                )
+            }
             <Footer />
         </div>
     );
