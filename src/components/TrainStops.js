@@ -1,16 +1,23 @@
-import axios from 'axios'
+import React from 'react'
 
 
 function TrainStops(props) {
-    const { setStations } = props
-    // const url = 'https://data.cityofnewyork.us/api/views/kk4q-3rt2/rows.json?accessType=DOWNLOAD';
-    // const url ="https://data.cityofnewyork.us/api/geospatial/3qz8-muuu?method=export&format=GeoJSON"
-    // const TrainEnteranceURL ='https://data.ny.gov/resource/i9wp-a4ja.geojson'
-    // const StationListURL='http://web.mta.info/developers/data/nyct/subway/Stations.csv'
-    // const TrainLineURL ='https://data.cityofnewyork.us/resource/s7zz-qmyz.json'
-    // const [data, setData] = useState([])
+    const { selectStation } = props
+//  console.log(selectStation && selectStation)
 
-return null
+    return (
+        <div 
+        style={{
+            // border: '3px solid black'
+        }}>
+            <ul>
+                <li>Station Name: {selectStation && selectStation.name}</li>
+                <li>Lines at this Station: {selectStation && selectStation.line}</li>
+                <li>Important Notes: {selectStation && selectStation.notes}</li>
+           
+            </ul>
+        </div>
+        )
 
 
 }

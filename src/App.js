@@ -6,21 +6,19 @@ import Footer from "./components/Footer";
 import SearchBar from './components/SearchBar'
 import axios from "axios";
 import Map from './components/Map';
-import pin from './pics/pin.png'
 
 
 function App() {
 
     const [stations, setStations] = useState(null)
     const [selectStation, setSelectStation] = useState(null)
-    // const [markers, setMarkers] = useState(null)
 
-    const TrainStationsURL = "https://data.cityofnewyork.us/resource/kk4q-3rt2.json"
+    const [TrainStationsURL, setTrainStationURL] = useState("https://data.cityofnewyork.us/resource/kk4q-3rt2.json")
 
 
     const getTrainStations = async () => {
         try {
-            let response = await axios.get(TrainStationsURL);
+            const response = await axios.get(TrainStationsURL);
             setStations(response.data);
             console.log(response.data)
             // setMarkers(response.data)
@@ -63,6 +61,7 @@ function App() {
                         )
                 )
             }
+            {/* <TrainStops/> */}
             <Footer />
         </div>
     );
