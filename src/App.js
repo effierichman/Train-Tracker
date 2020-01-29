@@ -6,14 +6,33 @@ import Footer from "./components/Footer";
 import SearchBar from './components/SearchBar'
 import axios from "axios";
 import Map from './components/Map';
+import TrainLines from './components/TrainLines';
+import { Route } from 'react-router-dom'
+
 
 
 function App() {
 
     const [stations, setStations] = useState(null)
     const [selectStation, setSelectStation] = useState(null)
-
+    const [selectLines, setSelectLines] = useState(null)
+    const [trainLineURL, setTrainLinesURL] = useState('https://data.cityofnewyork.us/api/geospatial/3qz8-muuu?method=export&format=GeoJSON')
     const [TrainStationsURL, setTrainStationURL] = useState("https://data.cityofnewyork.us/resource/kk4q-3rt2.json")
+
+    const getTrainLines = async () => {
+        try {
+            const response = await axios.get(TrainStationsURL);
+            setStations(response.data);
+            // console.log(response.data.features.properties.name)
+        } catch (err) {
+            console.log(`Error Occurred: ${err}`);
+            console.log(err.response)
+        }
+    };
+    useEffect(() => {
+        getTrainLines()
+        getTrainStations()
+    }, [])
 
 
     const getTrainStations = async () => {
@@ -27,7 +46,7 @@ function App() {
             console.log(err.response)
         }
     };
-    useEffect(() => { getTrainStations() }, [])
+    // useEffect(() => { getTrainStations() }, [])
 
     function handleClick(e) {
         e.preventDefault();
@@ -53,7 +72,7 @@ function App() {
                 (
                     stations ?
                         (
-                            <Map stations={stations}  />
+                            <Route exact path="/"><Map stations={stations} /></Route>
                         )
                         :
                         (
@@ -62,6 +81,13 @@ function App() {
                 )
             }
             {/* <TrainStops/> */}
+            {/* <TrainLines selectLines={selectLines} /> */}
+
+            <Route exact path="/line_info/:line_slug" >
+                <TrainLines stations={stations} />
+                {/* <Map stations={stations} /> */}
+            </Route>
+
             <Footer />
         </div>
     );

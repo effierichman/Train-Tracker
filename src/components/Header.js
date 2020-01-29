@@ -6,7 +6,7 @@ function Header() {
         <div
             style={{
                 textAlign: 'center',
-                height: '40px',
+                height: '20vh',
                 fontSize: '10px',
                 background: `url(${SkyLine}) center center no-repeat`,
                 backgroundSize: 'cover'

@@ -6,7 +6,7 @@ function SearchBar(props) {
   //     console.log(result, lat, lng, text)
   //   }
 
-<div>
+{/* <div>
                         const geocoder = new MapboxGeocoder({  
                             accessToken: mapboxgl.pk.eyJ1IjoiZWZmaWVyaWNobWFuIiwiYSI6ImNrNXM4cXE1NzBsY24zZW5zc2s5cm1lbjgifQ.aBavEHtl3XOHtrKYGlMRDQ, // Set the access token
                             mapboxgl: mapboxgl, // Set the mapbox-gl instance
@@ -18,7 +18,7 @@ function SearchBar(props) {
                               latitude: 40.800581558114956
                             } // Coordinates of UC Berkeley
                           });
-                          </div>
+                          </div> */}
   return (
     <form 
     style={{textAlign: 'center'}}>
