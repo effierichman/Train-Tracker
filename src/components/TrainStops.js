@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Station from './../images/station.jpeg'
+// import Station from './../images/station.jpeg'
 
 function TrainStops(props) {
     const { selectStation } = props
@@ -15,7 +15,7 @@ function TrainStops(props) {
                 // border: '3px solid black'
                 width: '30vw',
                 padding: '5px',
-                background: `url(${Station}) center center no-repeat`,
+                // background: `url(${Station}) center center no-repeat`,
                 backgroundSize: '70vh 30vw'
                 // backgroundSize: 'cover'
             }}>

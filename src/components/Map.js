@@ -83,7 +83,7 @@ const Map = (props) => {
                         }
                     >
                         <h1>YOU ARE HERE</h1>
-                        {/* <img style={{ width: '20px', height: '20px', color: 'yellow' }} src={rail} alt='pin' /> */}
+                    
                     </div>
                 </Marker>}
 

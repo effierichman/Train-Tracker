@@ -35,6 +35,19 @@ function App() {
         getLocation()
     }, [])
 
+    const getTrainStations = async () => {
+        try {
+            const response = await axios.get(TrainStationsURL);
+            setStations(response.data);
+            console.log(response.data)
+            // setMarkers(response.data)
+        } catch (err) {
+            console.log(`Error Occurred: ${err}`);
+            console.log(err.response)
+        }
+    };
+    // useEffect(() => { getTrainStations() }, [])
+
     function getLocation() {
         const options = {
             enableHighAccuracy: true,
@@ -135,18 +148,7 @@ function App() {
         }
     }
 
-    const getTrainStations = async () => {
-        try {
-            const response = await axios.get(TrainStationsURL);
-            setStations(response.data);
-            console.log(response.data)
-            // setMarkers(response.data)
-        } catch (err) {
-            console.log(`Error Occurred: ${err}`);
-            console.log(err.response)
-        }
-    };
-    // useEffect(() => { getTrainStations() }, [])
+   
 
     function handleClick(e) {
         e.preventDefault();
