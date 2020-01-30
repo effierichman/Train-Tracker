@@ -14,9 +14,9 @@ const Map = (props) => {
     // const { markers } = props
     // console.log(stations)
     const [viewport, setViewport] = useState({
-        latitude: 40.800581558114956,
-        
-        longitude: -73.95806670661364,
+        latitude: -73.98384899986625,
+
+        longitude: 40.76172799961419,
         zoom: 13,
         width: '70vw',
         height: '70vh'
@@ -71,7 +71,7 @@ const Map = (props) => {
 
 
                 }
-                    {/* {<Marker
+                    {<Marker
                     key={userLoc}
                     latitude={userLoc ? userLoc.coords.latitude : -73.98384899986625}
                     longitude={userLoc ? userLoc.coords.longitude : 40.76172799961419}
@@ -83,8 +83,9 @@ const Map = (props) => {
                         }
                     >
                         <h1>YOU ARE HERE</h1>
-                        {/* <img style={{ width: '20px', height: '20px', color: 'yellow' }} src={rail} alt='pin' /> }
-                    </div> </Marker>} */}
+                        {/* <img style={{ width: '20px', height: '20px', color: 'yellow' }} src={rail} alt='pin' /> */}
+                    </div>
+                </Marker>}
 
 
 
