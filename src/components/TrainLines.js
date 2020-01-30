@@ -18,7 +18,7 @@ function TrainLines(props) {
             return lineArr.includes(lineToFind)
         });
         // let sortedStations = foundStations.name.sort()
-        let sortedStations = foundStations.sort(function(a, b) {
+        let sortedStations = foundStations.sort(function (a, b) {
             var textA = a.name.toUpperCase();
             var textB = b.name.toUpperCase();
             return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
@@ -30,9 +30,13 @@ function TrainLines(props) {
         return (
             <div style={{ display: 'flex' }}>
                 <Map stations={foundStations} filterd={true} />
-                <div style={{ display: 'flex', flexDirection: 'column', overflow: 'scroll', height: '70vh' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', overflow: 'scroll', height: '70vh', padding: '10px', border: '5px solid brown' }}>
                     {sortedStations.map((element) => (
-                        <p>{element.name}</p>
+                        <ul style={{listStyle: 'none'}}>
+                            <li >Station Name: {element.name}</li>
+                            <li>Lines at this Station: {element.line}</li>
+                            <li>Important Notes: {element.notes}</li>
+                        </ul>
                     ))}
                 </div>
             </div>

@@ -9,13 +9,14 @@ import { Route } from 'react-router-dom'
 
 
 const Map = (props) => {
-    const { stations } = props
+    const { stations, userLoc } = props
+    console.log(userLoc.coords.latitude)
     // const { markers } = props
     // console.log(stations)
     const [viewport, setViewport] = useState({
-        latitude: 40.800581558114956,
-        longitude: -73.95806670661364,
-        zoom: 12,
+        latitude: userLoc.coords.latitude,
+        longitude: userLoc.coords.longitude,
+        zoom: 13,
         width: '70vw',
         height: '70vh'
     })
@@ -34,7 +35,7 @@ const Map = (props) => {
             <ReactMapGL
                 {...viewport}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-                mapStyle='mapbox://styles/effierichman/ck5sdo6y72gew1imq1egz2lus'
+                mapStyle='mapbox://styles/effierichman/ck5zz3msm0aq51ipg2i2f6l0w'
                 onViewportChange={viewport => {
                     setViewport(viewport)
                 }}  >
@@ -64,7 +65,27 @@ const Map = (props) => {
                         </Marker>
 
                     )
-                })}
+                })
+                
+                
+                
+                }
+                { <Marker
+                  key={userLoc}
+                  latitude={userLoc.coords.latitude}
+                  longitude={userLoc.coords.longitude}
+                   >
+                      <div
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                }
+                                }
+                            >
+                                <h1>YOU ARE HERE</h1>
+                    {/* <img style={{ width: '20px', height: '20px', color: 'yellow' }} src={rail} alt='pin' /> */}
+                    </div>
+                    </Marker>}
+                
             </ReactMapGL>
             {
                 (props.filterd) ?
