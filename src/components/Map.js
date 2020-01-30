@@ -10,12 +10,13 @@ import { Route } from 'react-router-dom'
 
 const Map = (props) => {
     const { stations, userLoc } = props
-    console.log(userLoc.coords.latitude)
+    console.log(userLoc && userLoc.coords.latitude)
     // const { markers } = props
     // console.log(stations)
     const [viewport, setViewport] = useState({
-        latitude: userLoc.coords.latitude,
-        longitude: userLoc.coords.longitude,
+        latitude: -73.98384899986625,
+
+        longitude: 40.76172799961419,
         zoom: 13,
         width: '70vw',
         height: '70vh'
@@ -66,26 +67,32 @@ const Map = (props) => {
 
                     )
                 })
-                
-                
-                
+
+
+
                 }
-                { <Marker
-                  key={userLoc}
-                  latitude={userLoc.coords.latitude}
-                  longitude={userLoc.coords.longitude}
-                   >
-                      <div
-                                onClick={(e) => {
-                                    e.preventDefault()
-                                }
-                                }
-                            >
-                                <h1>YOU ARE HERE</h1>
-                    {/* <img style={{ width: '20px', height: '20px', color: 'yellow' }} src={rail} alt='pin' /> */}
+                    {<Marker
+                    key={userLoc}
+                    latitude={userLoc ? userLoc.coords.latitude : -73.98384899986625}
+                    longitude={userLoc ? userLoc.coords.longitude : 40.76172799961419}
+                >
+                    <div
+                        onClick={(e) => {
+                            e.preventDefault()
+                        }
+                        }
+                    >
+                        <h1>YOU ARE HERE</h1>
+                        {/* <img style={{ width: '20px', height: '20px', color: 'yellow' }} src={rail} alt='pin' /> */}
                     </div>
-                    </Marker>}
-                
+                </Marker>}
+
+
+
+
+
+
+
             </ReactMapGL>
             {
                 (props.filterd) ?
